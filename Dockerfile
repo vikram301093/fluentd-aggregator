@@ -13,6 +13,9 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
  && sudo gem install fluent-plugin-docker \
  && sudo gem install fluent-plugin-gelf-hs
  
+ENV FLUENT_AZURE_WORKSPACE_ID needatruntime
+ENV FLUENT_AZURE_PRIMARY_KEY needatruntime
+
 RUN  /usr/local/bin/fluent-gem install gelf
  
 RUN usermod -a -G root fluent
